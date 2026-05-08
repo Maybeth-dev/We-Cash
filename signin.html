@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="./istyle.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        input[type="email"] {
+            width: 90%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #e5e5e5;
+        }
+
+        
+        .link {
+            margin-top: 20px;
+            color: #555;
+            cursor: pointer;
+        }
+        
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .divider hr {
+            flex-grow: 1;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+        
+        .divider span {
+            margin: 0 10px;
+            color: #555;
+        }
+        
+        .btn-next {
+            width: 100%;
+            padding: 12px;
+            background-color: #87cefa;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-next:hover {
+        
+            background-color: #e5e5e5;
+        }
+        .btn-create-account {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            color: #000;
+            background-color: cadetblue;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-create-account:hover {
+            background-color: #d3d3d3;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+       
+        h2 {
+            margin-bottom: 20px;
+        }
+       
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+       
+        input  {
+            width: 90%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #e5e5e5;
+        }
+
+        
+    </style>
+    <nav class="navbar">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="40" viewBox="0 0 100 40">
+            <text x="0" y="30" font-family="Arial" font-size="21" fill="#4CAF50">We Cash</text>
+          </svg>
+        </div>
+        <ul class="nav-links">
+          <li><a href="./index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Company <span class="dropdown-arrow">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="./index.html">About Us</a></li>
+              <li><a href="./index.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="./signup.html">Sign Up</a></li>
+          <li><a href="signin.html">Log In</a></li>
+          <li class="search-container">
+            <input type="text" placeholder="Search..." class="search-input">
+            <button class="search-button" onclick="focusSearch()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.397l3.646 3.646a1 1 0 0 0 1.415-1.415l-3.646-3.646zm-5.242.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z" />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>                           
+     <div class="container">
+         <h2>Sign In</h2>
+    
+ 
+         <input type="password" id="password" placeholder="Enter your password" required>
+        <input type="email" id="email" placeholder="Enter your email address" required> 
+       <a style="text-decoration-line: none;  color: #000;" href="./user-page.html"> <button class="btn-create-account"> Sign In to your account</button></a>
+        
+        <div class="divider">
+            <hr>
+            <span>or</span>
+            <hr>
+        </div>
+        
+        <div class="link" onclick="alert('Help page not yet implemented')">Trouble Signing In?</div>
+        
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getAuth,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase- auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDbcOiDEbh00C_inqFZbw2v-kAWwWC19Ws",
+          authDomain: "wecash-a0756.firebaseapp.com",
+          databaseURL: "https://wecash-a0756-default-rtdb.firebaseio.com",
+          projectId: "wecash-a0756",
+          storageBucket: "wecash-a0756.firebasestorage.app",
+          messagingSenderId: "341614312585",
+          appId: "1:341614312585:web:4b2fc6975d727eddf49a58",
+          measurementId: "G-C700T0SBC9"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const  getAuth = getAuth();
+        
+        
+      document.getElementById("signIn").addEventListener("click", () => {
+        let signInEmail =document.getElementById("signInEmail").value
+        let signInPassword = document.getElementById("signInPassword").value
+
+        console.log({signInEmail, signInPassword})
+
+        signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+          .then((userCredential) => {
+          
+            const user = userCredential.user;
+
+            console.log(user)
+
+            alert("Signed In successfully")
+            
+            location.href = "./user-page.html"
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            console.log(errorCode)
+            console.log(errorMessage)
+          });
+      });
+      </script>
+</body>
+</html>
